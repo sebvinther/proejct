@@ -19,7 +19,7 @@ load_dotenv()   #Making the .env file work
 # %%
 #Setting up API key to being able to fetch stocks from Alpha Vantage
 
-api_key = os.getenv('ALPHAVANTAGE_API_KEY') 
+api_key = os.getenv('STOCK_API') 
 ts = TimeSeries(key=api_key, output_format='pandas')
 
 #Defining a function to fetch stocks

@@ -31,7 +31,7 @@ fs = connection.get_feature_store()
 # %%
 #Getting the feature view
 feature_view = fs.get_feature_view(
-    name='tesla_stocks_fv',
+    name='nvidia_stocks_fv',
     version=5
 )
 

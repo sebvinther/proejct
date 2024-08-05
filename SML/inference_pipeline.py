@@ -28,14 +28,14 @@ end_date = datetime.now() - timedelta(hours=24)
 print(end_date.strftime("%Y-%m-%d"))
 
 # %%
-feature_view = fs.get_feature_view('tesla_stocks_fv', 5)
+feature_view = fs.get_feature_view('nvidia_stocks_fv', 5)
 feature_view.init_batch_scoring(training_dataset_version=1)
 
 # %%
 print(feature_view.get_batch_query())
 
 # %%
-# we had problems fetching the data from fv with get_batch_data function, tried everything and it just doesnt work 
+# I've had problems fetching the data from fv with get_batch_data function, tried everything and it just doesnt work 
 nvidia_df_b = feature_view.get_batch_data(start_time=start_date, end_time=end_date)
 
 # %%
@@ -164,7 +164,7 @@ fs = project.get_feature_store()
 results_fg = fs.get_or_create_feature_group(
     name= 'stock_prediction_results',
     version = 1,
-    description = 'Predction of TSLA open stock price',
+    description = 'Predction of NVDA open stock price',
     primary_key = ['ticker'],
     event_time = ['date'],
     online_enabled = False,

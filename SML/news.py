@@ -13,7 +13,7 @@ load_dotenv()
 #Defining a function for fetching news
 
 def fetch_news(ticker, start_date, end_date):
-    api_key = os.getenv('En4aM9ZHX8k2veQgC7XLStzQ3z_8j7W0')
+    api_key = os.getenv('API_NEWS')
     base_url = os.getenv("ENDPOINTNEWSP")
     headers = {"Authorization": f"Bearer {api_key}"}
     all_news = []
@@ -62,7 +62,7 @@ def fetch_news(ticker, start_date, end_date):
     return pd.concat(all_news, ignore_index=True)
 
 #Usage
-api_key = os.getenv('NEWSP_API')
+api_key = os.getenv('API_NEWS')
 ticker = 'NVDA'
 end_date = datetime.now() - timedelta(days=1)  # Yesterday's date
 start_date = end_date - timedelta(days=365 * 2)

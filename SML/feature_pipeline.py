@@ -22,7 +22,7 @@ fs = project.get_feature_store()
 
 # %%
 # Load and display the data from CSV to confirm
-nvda_df = pd.read_csv('NVDA_stock_price.csv')
+nvda_df = pd.read_csv('NVDA_stock_prices.csv')
 print(nvda_df.head())    
 
 # %%

@@ -18,7 +18,7 @@ load_dotenv()
 
 # %%
 #Connecting to Alpha vantage using API key
-api_key = os.getenv('ESEF1DWEXKGPWQSL') # Replace this with your actual API key
+api_key = os.getenv('STOCK_API') # Replace this with your actual API key
 ts = TimeSeries(key=api_key, output_format='pandas')
 
 # Fetch daily adjusted stock prices; adjust the symbol as needed
