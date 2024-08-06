@@ -19,12 +19,12 @@ import joblib
 load_dotenv()
 
 #Connecting to hopsworks
-api_key = os.environ.get('hopsworks_api')
+api_key = os.environ.get('HOPSWORKS_API')
 project = hopsworks.login(api_key_value=api_key)
 fs = project.get_feature_store()
 
 #Another connection to hopsworks
-api_key = os.getenv('hopsworks_api')
+api_key = os.getenv('HOPSWORKS_API')
 connection = hsfs.connection()
 fs = connection.get_feature_store()
 
