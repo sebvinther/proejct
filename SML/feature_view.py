@@ -17,7 +17,7 @@ import os
 load_dotenv()
 
 #Getting connected to hopsworks
-api_key = os.environ.get('L7nupwHgBgEVRHYo.5aAPV3KZxGrhSHh0jpqRMWb0QgikAjmRR2tF7Ulho4ffN2kB99xFYHuuiqW8tij1')
+api_key = os.environ.get('hopsworks_api')
 project = hopsworks.login(api_key_value=api_key)
 fs = project.get_feature_store()
 
@@ -27,8 +27,8 @@ fs = project.get_feature_store()
 def create_stocks_feature_view(fs, version):
 
     # Loading in the feature groups
-    nvidia_fg = fs.get_feature_group('nvidia_stock', version=5)
-    news_sentiment_fg = fs.get_feature_group('news_sentiment_updated', version=5)
+    nvidia_fg = fs.get_feature_group('nvidia_stock', version=1)
+    news_sentiment_fg = fs.get_feature_group('news_sentiment_updated', version=1)
 
     # Defining the query
     ds_query = nvidia_fg.select(['date', 'open', 'ticker'])\
@@ -46,7 +46,7 @@ def create_stocks_feature_view(fs, version):
 # %%
 #Creating the feature view
 try:
-    feature_view = fs.get_feature_view("nvidia_stocks_fv", version=5)
-    nvidia_fg = fs.get_feature_group('nvidia_stock', version=5)
+    feature_view = fs.get_feature_view("nvidia_stocks_fv", version=1)
+    nvidia_fg = fs.get_feature_group('nvidia_stock', version=1)
 except:
-    feature_view, nvidia_fg = create_stocks_feature_view(fs, 5)
+    feature_view, nvidia_fg = create_stocks_feature_view(fs, 1)
