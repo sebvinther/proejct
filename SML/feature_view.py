@@ -17,7 +17,7 @@ import os
 load_dotenv()
 
 #Getting connected to hopsworks
-api_key = os.environ.get('hopsworks_api')
+api_key = os.environ.get('HOPSWORKS_API')
 project = hopsworks.login(api_key_value=api_key)
 fs = project.get_feature_store()
 
