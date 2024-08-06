@@ -16,7 +16,7 @@ import os
 load_dotenv()
 
 #Connecting to hopsworks
-api_key = os.environ.get('L7nupwHgBgEVRHYo.5aAPV3KZxGrhSHh0jpqRMWb0QgikAjmRR2tF7Ulho4ffN2kB99xFYHuuiqW8tij1')
+api_key = os.environ.get('hopsworks_api')
 project = hopsworks.login(api_key_value=api_key)
 fs = project.get_feature_store()
 
@@ -49,7 +49,7 @@ nvda_df['date'] = pd.to_datetime(nvda_df['date'])
 nvidia_fg = fs.get_or_create_feature_group(
     name="nvidia_stock",
     description="Nvidia stock dataset from alpha vantage",
-    version=5,
+    version=1,
     primary_key=["ticker"],
     event_time=['date'],
     online_enabled=False,
@@ -76,7 +76,7 @@ news_df_updated['date'] = pd.to_datetime(news_df_updated['date'])
 news_sentiment_fg = fs.get_or_create_feature_group(
     name='news_sentiment_updated',
     description='News sentiment from Polygon',
-    version=5,
+    version=1,
     primary_key=['ticker'],
     event_time=['date'],
     online_enabled=False,
