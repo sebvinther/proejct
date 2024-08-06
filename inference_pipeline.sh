@@ -2,7 +2,7 @@
 
 set -e
 
-cd ./proejct/SML
+cd ./SML
 
 python news.py
 
