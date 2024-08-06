@@ -31,4 +31,4 @@ jobs:
           ENDPOINTNEWSP: ${{ secrets.ENDPOINTNEWSP }}
           STOCK_API: ${{ secrets.STOCK_API }}
           API_NEWS: ${{ secrets.API_NEWS }}
-        run: .inference_pipeline.sh
+        run: bash inference_pipeline.sh
