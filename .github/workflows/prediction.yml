@@ -1,4 +1,4 @@
-name: inference_pipeline
+  name: inference_pipeline
 
 on:
   workflow_dispatch:
@@ -29,6 +29,6 @@ jobs:
         env: 
           HOPSWORKS_API: ${{ secrets.HOPSWORKS_API }}
           ENDPOINTNEWSP: ${{ secrets.ENDPOINTNEWSP }}
-          STOCK_API: ${{ secrets.STOCKS_API }}
-          API_NEWS: ${{ secrets.NEWSP_API }}
+          STOCK_API: ${{ secrets.STOCK_API }}
+          API_NEWS: ${{ secrets.API_NEWS }}
         run: inference_pipeline.sh
