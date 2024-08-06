@@ -14,7 +14,7 @@ import os
 load_dotenv()
 
 # %%
-api_key = os.environ.get('L7nupwHgBgEVRHYo.5aAPV3KZxGrhSHh0jpqRMWb0QgikAjmRR2tF7Ulho4ffN2kB99xFYHuuiqW8tij1')
+api_key = os.environ.get('hopsworks_api')
 project = hopsworks.login(api_key_value=api_key)
 fs = project.get_feature_store()
 mr = project.get_model_registry() 
@@ -28,7 +28,7 @@ end_date = datetime.now() - timedelta(hours=24)
 print(end_date.strftime("%Y-%m-%d"))
 
 # %%
-feature_view = fs.get_feature_view('nvidia_stocks_fv', 5)
+feature_view = fs.get_feature_view('nvidia_stocks_fv', 1)
 feature_view.init_batch_scoring(training_dataset_version=1)
 
 # %%
@@ -82,7 +82,7 @@ nvidia_df_b_array = np.expand_dims(nvidia_df_b_array, axis=1)
 # %%
 import joblib
 
-the_model = mr.get_model("stock_pred_model", version=29)
+the_model = mr.get_model("stock_pred_model", version=1)
 model_dir = the_model.download()
 
 model = joblib.load(model_dir + "/stock_prediction_model.pkl")
@@ -156,7 +156,7 @@ nvidia_df_b.head()
 #tesla_df_b['predictions'] = predictions_unscaled
 
 # %%
-api_key = os.environ.get('L7nupwHgBgEVRHYo.5aAPV3KZxGrhSHh0jpqRMWb0QgikAjmRR2tF7Ulho4ffN2kB99xFYHuuiqW8tij1')
+api_key = os.environ.get('hopsworks_api')
 project = hopsworks.login(api_key_value=api_key)
 fs = project.get_feature_store()
 
