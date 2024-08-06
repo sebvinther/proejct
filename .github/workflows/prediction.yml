@@ -23,7 +23,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: make script executable
-        run: chmod +x inference_pipeline.sh
+        run: chmod +x ./inference_pipeline.sh
           
       - name: execute python workflows from bash script
         env: 
@@ -31,4 +31,4 @@ jobs:
           ENDPOINTNEWSP: ${{ secrets.ENDPOINTNEWSP }}
           STOCK_API: ${{ secrets.STOCK_API }}
           API_NEWS: ${{ secrets.API_NEWS }}
-        run: .inference_pipeline.sh
+        run: ./inference_pipeline.sh
