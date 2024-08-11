@@ -96,7 +96,7 @@ predictions
 # %%
 import numpy as np
 
-# Our predictions array
+# My predictions array
 predictions = np.array(predictions, dtype=np.float32)
 
 # Changing the format of the predicted value to correspond with format of "open"
