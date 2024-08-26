@@ -256,7 +256,7 @@ if os.path.isdir(model_dir) == False:
 #        name="stock_pred_model",
 #        metrics= rmse_metrics,
 #        model_schema=model_schema,
-#        description="Stock Market TSLA Predictor from News Sentiment",
+#        description="Stock Market NVDA Predictor from News Sentiment",
 #    )
 
 #stock_pred_model.save(model_dir)
