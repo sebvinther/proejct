@@ -1,11 +1,11 @@
-name: inference_pipeline
+#name: inference_pipeline (just remove # to work)
 
-on:
+#on:
   workflow_dispatch:
   schedule:
     - cron: '12 12 * * *'
 
-jobs:
+#jobs:
   test_schedule:
     runs-on: ubuntu-latest
     steps:
