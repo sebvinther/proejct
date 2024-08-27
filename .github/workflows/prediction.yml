@@ -1,32 +1,32 @@
 #name: inference_pipeline (just remove # to work)
 
 #on:
-  workflow_dispatch:
-  schedule:
+  #workflow_dispatch:
+  #schedule:
     - cron#: '12 12 * * *'
 
 #jobs:
-  test_schedule:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repo content
-        uses: actions/checkout@v2
+  #test_schedule:
+    #runs-on: ubuntu-latest
+    #steps:
+      - #name: checkout repo content
+        #uses: actions/checkout@v2
 
-      - name: setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.11.9'
+      - #name: setup python
+        #uses: actions/setup-python@v2
+        #with:
+          #python-version: '3.11.9'
           
-      - name: install python packages
-        run: |
+      - #name: install python packages
+        #run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: make script executable
-        run: chmod +x ./inference_pipeline.sh
+      - #name: make script executable
+        #run: chmod +x ./inference_pipeline.sh
           
-      - name: execute python workflows from bash script
-        env: 
+      - #name: execute python workflows from bash script
+        #env: 
           HOPSWORKS_API: ${{ secrets.HOPSWORKS_API }}
           ENDPOINTNEWSP: ${{ secrets.ENDPOINTNEWSP }}
           STOCK_API: ${{ secrets.STOCK_API }}
